@@ -1,0 +1,152 @@
+[gd_scene load_steps=6 format=3 uid="uid://6yb5y0p2dc1o"]
+
+[ext_resource type="Script" uid="uid://ipin8mcy64ef" path="res://main.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://76cob5mi78ad" path="res://Graphics/Board.svg" id="1_ig7tw"]
+[ext_resource type="PackedScene" uid="uid://ohrl2jsujdwt" path="res://Dice.tscn" id="3_h2yge"]
+[ext_resource type="LabelSettings" uid="uid://b1el8psl7knwt" path="res://Moves_Label.tres" id="4_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://ban3wq5kp68f3" path="res://Graphics/icon.svg" id="5_lquwl"]
+
+[node name="Main" type="Node2D" node_paths=PackedStringArray("Game_Spaces")]
+script = ExtResource("1_0xm2m")
+Game_Spaces = [NodePath("Spots/BlueStart"), NodePath("Spots/1"), NodePath("Spots/2"), NodePath("Spots/3"), NodePath("Spots/GreenStart"), NodePath("Spots/4"), NodePath("Spots/5"), NodePath("Spots/6"), NodePath("Spots/RedStart"), NodePath("Spots/7"), NodePath("Spots/8"), NodePath("Spots/9"), NodePath("Spots/YellowStart"), NodePath("Spots/10"), NodePath("Spots/11"), NodePath("Spots/12"), NodePath("Spots/In_1"), NodePath("Spots/In_2"), NodePath("Spots/In_3"), NodePath("Spots/In_4"), NodePath("Spots/In_5"), NodePath("Spots/In_6"), NodePath("Spots/In_7"), NodePath("Spots/In_8"), NodePath("Spots/Home")]
+
+[node name="Board" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(801, 448.5)
+scale = Vector2(1.81321, 1.81466)
+texture = ExtResource("1_ig7tw")
+region_enabled = true
+region_rect = Rect2(56.9074, 36.205, 878.46, 491.938)
+
+[node name="Dice" parent="." instance=ExtResource("3_h2yge")]
+top_level = true
+position = Vector2(798, 452)
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.2
+
+[node name="Spots" type="Node" parent="."]
+
+[node name="BlueStart" type="Marker2D" parent="Spots"]
+position = Vector2(802, 104)
+
+[node name="1" type="Marker2D" parent="Spots"]
+position = Vector2(470, 96)
+
+[node name="2" type="Marker2D" parent="Spots"]
+position = Vector2(157, 96)
+
+[node name="3" type="Marker2D" parent="Spots"]
+position = Vector2(163, 265)
+
+[node name="GreenStart" type="Marker2D" parent="Spots"]
+position = Vector2(172, 452)
+
+[node name="4" type="Marker2D" parent="Spots"]
+position = Vector2(169, 640)
+
+[node name="5" type="Marker2D" parent="Spots"]
+position = Vector2(168, 805)
+
+[node name="6" type="Marker2D" parent="Spots"]
+position = Vector2(474, 812)
+
+[node name="YellowStart" type="Marker2D" parent="Spots"]
+position = Vector2(1412, 446)
+
+[node name="7" type="Marker2D" parent="Spots"]
+position = Vector2(1109, 803)
+
+[node name="8" type="Marker2D" parent="Spots"]
+position = Vector2(1407, 807)
+
+[node name="9" type="Marker2D" parent="Spots"]
+position = Vector2(1410, 638)
+
+[node name="RedStart" type="Marker2D" parent="Spots"]
+position = Vector2(801, 797)
+
+[node name="10" type="Marker2D" parent="Spots"]
+position = Vector2(1404, 264)
+
+[node name="11" type="Marker2D" parent="Spots"]
+position = Vector2(1402, 104)
+
+[node name="12" type="Marker2D" parent="Spots"]
+position = Vector2(1110, 99)
+
+[node name="In_1" type="Marker2D" parent="Spots"]
+position = Vector2(1114, 268)
+
+[node name="In_2" type="Marker2D" parent="Spots"]
+position = Vector2(1112, 451)
+
+[node name="In_3" type="Marker2D" parent="Spots"]
+position = Vector2(1112, 639)
+
+[node name="In_4" type="Marker2D" parent="Spots"]
+position = Vector2(801, 639)
+
+[node name="In_5" type="Marker2D" parent="Spots"]
+position = Vector2(479, 646)
+
+[node name="In_6" type="Marker2D" parent="Spots"]
+position = Vector2(467, 450)
+
+[node name="In_7" type="Marker2D" parent="Spots"]
+position = Vector2(461, 256)
+
+[node name="In_8" type="Marker2D" parent="Spots"]
+position = Vector2(799, 258)
+
+[node name="Home" type="Marker2D" parent="Spots"]
+position = Vector2(799, 451)
+
+[node name="BlueStart2" type="Marker2D" parent="Spots"]
+position = Vector2(888, 106)
+
+[node name="BlueStart3" type="Marker2D" parent="Spots"]
+position = Vector2(803, 146)
+
+[node name="BlueStart4" type="Marker2D" parent="Spots"]
+position = Vector2(720, 106)
+
+[node name="RedStart3" type="Marker2D" parent="Spots"]
+position = Vector2(801, 838)
+
+[node name="RedStart2" type="Marker2D" parent="Spots"]
+position = Vector2(878, 799)
+
+[node name="RedStart4" type="Marker2D" parent="Spots"]
+position = Vector2(717, 799)
+
+[node name="Moves" type="Label" parent="."]
+offset_left = 776.0
+offset_top = 501.0
+offset_right = 816.0
+offset_bottom = 524.0
+text = "Moves"
+label_settings = ExtResource("4_1bvp3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TurnLabel" type="Label" parent="."]
+offset_left = 776.0
+offset_top = 375.0
+offset_right = 816.0
+offset_bottom = 398.0
+label_settings = ExtResource("4_1bvp3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Passturn" type="Button" parent="."]
+offset_left = 897.0
+offset_top = 417.0
+offset_right = 1033.0
+offset_bottom = 553.0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("5_lquwl")
+icon_alignment = 1
+
+[connection signal="on_dice_roll" from="Dice" to="." method="_on_dice_on_dice_roll"]
+[connection signal="button_up" from="Passturn" to="." method="Pass_Turn"]
